@@ -11,19 +11,19 @@ def encryption(list, step):
         if i in AZ:
             i += step
             if i > 90:
-                i = abs(90 - i) + 65
+                i = (i % 90) + 65
         elif i in az:
             i += step
             if i > 122:
-                i = abs(122 - i) + 97
+                i = (i % 122) + 97
         elif i in AZ_Rus:
             i += step
             if i > 1071:
-                i = abs(1071 - i) + 1040
+                i = (i % 1071) + 1040
         elif i in az_Rus:
             i += step
             if i > 1103:
-                i = abs(1103 - i) + 1072
+                i = (i % 1103) + 1072
         new_list.append(i)
     return new_list
 
@@ -40,11 +40,12 @@ az = set(i for i in range(97, 123))
 AZ_Rus = set(i for i in range(1040, 1072))
 az_Rus = set(i for i in range(1072, 1104))
 
-
-f = open('text.txt', 'r')
+decr = open('decryption.txt', 'r')
+encr = open('encryption.txt', 'w')
 # s = input()
 step = int(input())
-print(f.readline(0))
-# print(decryption(encryption(in_ASCII(str(line)), step)))
-# print(decryption(encryption(in_ASCII(s), step)))
-f.close()
+for line in decr:
+    encr.write(decryption(encryption(in_ASCII(line), step)))
+    # print(decryption(encryption(in_ASCII(s), step)))
+decr.close()
+encr.close()
