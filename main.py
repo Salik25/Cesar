@@ -40,6 +40,11 @@ az = set(i for i in range(97, 123))
 AZ_Rus = set(i for i in range(1040, 1072))
 az_Rus = set(i for i in range(1072, 1104))
 
-s = input()
+
+f = open('text.txt', 'r')
+# s = input()
 step = int(input())
-print(decryption(encryption(in_ASCII(s), step)))
+print(f.readline(0))
+# print(decryption(encryption(in_ASCII(str(line)), step)))
+# print(decryption(encryption(in_ASCII(s), step)))
+f.close()
