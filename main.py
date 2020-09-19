@@ -43,10 +43,3 @@ az_Rus = set(i for i in range(1072, 1104))
 s = input()
 step = int(input())
 print(decryption(encryption(in_ASCII(s), step)))
-
-'''
-A-Z 65-90
-a-z 97-122
-А-Я 1040-1071
-а-я 1072-1103
-'''
