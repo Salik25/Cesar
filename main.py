@@ -40,7 +40,7 @@ az = set(i for i in range(97, 123))
 AZ_Rus = set(i for i in range(1040, 1072))
 az_Rus = set(i for i in range(1072, 1104))
 
-decr = open('decryption.txt', 'r')
+decr = open('source.txt', 'r')
 encr = open('encryption.txt', 'w')
 # s = input()
 step = int(input())
