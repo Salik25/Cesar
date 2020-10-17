@@ -42,9 +42,16 @@ az_Rus = set(i for i in range(1072, 1104))
 
 decr = open('source.txt', 'r')
 encr = open('encryption.txt', 'w')
-step = int(input())
-for line in decr:
-    encr.write(decryption(encryption(in_ASCII(line), step)))
-    # print(decryption(encryption(in_ASCII(s), step)))
-decr.close()
-encr.close()
+step = 'g'
+while type(step) != int():
+    try: # проверка ошибок на ввод шага
+        step = int(input()) # вводим шаг кодировки
+        for line in decr:
+            encr.write(decryption(encryption(in_ASCII(line), step))) # вывод в файл закодированного текста
+        decr.close()
+        encr.close()
+        print("Перевод выполнен")
+        break
+    except ValueError:
+        print('Это не число.')
+
